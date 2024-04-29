@@ -35,23 +35,6 @@ class MiniGl {
 								(_miniGl.lastDebugMsg = t);
 					  }
 					: () => {}),
-			Object.defineProperties(_miniGl, {
-				Material: {
-					enumerable: !1,
-					value: class {
-						constructor(vertexShaders, fragments, uniforms = {}) {
-							const material = this;
-							function getShaderByType(type, source) {
-								const shader = context.createShader(type);
-								return (
-									context.shaderSource(shader, source),
-									context.compileShader(shader),
-									context.getShaderParameter(shader, context.COMPILE_STATUS) ||
-										console.error(context.getShaderInfoLog(shader)),
-									_miniGl.debug("Material.compileShaderSource", { source: source }),
-									shader
-								);
-							}
 							function getUniformVariableDeclarations(uniforms, type) {
 								return Object.entries(uniforms)
 									.map(([uniform, value]) => value.getDeclaration(uniform, type))
