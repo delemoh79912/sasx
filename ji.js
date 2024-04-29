@@ -351,12 +351,7 @@ class MiniGl {
 					}
 				}
 			});
-		const a = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
-		_miniGl.commonUniforms = {
-			projectionMatrix: new _miniGl.Uniform({ type: "mat4", value: a }),
-			modelViewMatrix: new _miniGl.Uniform({ type: "mat4", value: a }),
-			resolution: new _miniGl.Uniform({ type: "vec2", value: [1, 1] }),
-			aspectRatio: new _miniGl.Uniform({ type: "float", value: 1 })
+		
 		};
 	}
 	setSize(e = 640, t = 480) {
